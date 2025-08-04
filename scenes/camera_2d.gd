@@ -1,8 +1,8 @@
 extends Camera2D
 
-@onready var player: CharacterBody2D = get_node("/root/Main/Player")
-
-var speed = 100
+@onready
+var player: CharacterBody2D = get_node("/root/Main/Player")
+var speed = 80
 
 func _ready() -> void:
 	position = player.position
@@ -13,5 +13,5 @@ func _ready() -> void:
 func distanceFromPlayer() -> float:
 	return player.position.distance_to(position)
 
-func _physics_process(_delta) -> void:
-	position = position + Vector2.from_angle(position.angle_to_point(player.position)) * speed
+func _process(delta) -> void:
+	position += (player.position - position).normalized()*speed*delta*(distanceFromPlayer()/25)
