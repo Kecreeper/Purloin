@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bge7m5b7glita"]
+
+[ext_resource type="Texture2D" uid="uid://ct3xm4skeelsi" path="res://assets/ButtonBox.png" id="1_4ccqr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_108wq"]
+line_spacing = 0.0
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_ju13f"]
+font_size = 20
+shadow_size = 0
+
+[node name="HBoxContainer" type="HBoxContainer"]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="ButtonBox" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_4ccqr")
+
+[node name="Input" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "K"
+label_settings = SubResource("LabelSettings_108wq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Action" type="Label" parent="."]
+layout_mode = 2
+text = "Action"
+label_settings = SubResource("LabelSettings_ju13f")
+vertical_alignment = 1
