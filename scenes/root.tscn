@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://b8s3k0qwesnhm"]
 
-[ext_resource type="Texture2D" uid="uid://d0uerk5dc0tcn" path="res://assets/WoodPlanks1.png" id="1_lrqlo"]
+[ext_resource type="Texture2D" uid="uid://d0uerk5dc0tcn" path="res://assets/WoodPlanks2.png" id="1_lrqlo"]
 [ext_resource type="Texture2D" uid="uid://ytv25mnitcg6" path="res://assets/Bricks.png" id="2_sqa0i"]
 [ext_resource type="PackedScene" uid="uid://bm3sri47uwke0" path="res://scenes/player.tscn" id="3_jh1ax"]
 [ext_resource type="Texture2D" uid="uid://ix0rco2rxkyo" path="res://assets/BrickWall.png" id="3_kycxp"]
