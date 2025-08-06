@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc4tiylgfmwha"
-path="res://.godot/imported/WoodPlanks.png-8e7102f35c67b4e5649458ea2637626d.ctex"
+uid="uid://ix0rco2rxkyo"
+path="res://.godot/imported/BrickWall.png-f2f51883e8cba15b49b6751c6184d5ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/WoodPlanks.png"
-dest_files=["res://.godot/imported/WoodPlanks.png-8e7102f35c67b4e5649458ea2637626d.ctex"]
+source_file="res://assets/BrickWall.png"
+dest_files=["res://.godot/imported/BrickWall.png-f2f51883e8cba15b49b6751c6184d5ca.ctex"]
 
 [params]
 

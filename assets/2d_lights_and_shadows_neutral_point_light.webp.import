@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc4tiylgfmwha"
-path="res://.godot/imported/WoodPlanks.png-8e7102f35c67b4e5649458ea2637626d.ctex"
+uid="uid://cvobrmkol1l6"
+path="res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-e7ff95629e050edcc761aaf5d8570e25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/WoodPlanks.png"
-dest_files=["res://.godot/imported/WoodPlanks.png-8e7102f35c67b4e5649458ea2637626d.ctex"]
+source_file="res://assets/2d_lights_and_shadows_neutral_point_light.webp"
+dest_files=["res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-e7ff95629e050edcc761aaf5d8570e25.ctex"]
 
 [params]
 

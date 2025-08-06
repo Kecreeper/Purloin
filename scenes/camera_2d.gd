@@ -3,12 +3,13 @@ extends Camera2D
 @onready
 var player: CharacterBody2D = get_node("/root/Main/Player")
 var speed = 80
+var zoomTo = Vector2(2.0, 2.0)
 
 func _ready() -> void:
 	position = player.position
 	zoom = Vector2(5,5)
 	var tween = create_tween()
-	tween.tween_property(self, "zoom", Vector2(1,1), 0.5)
+	tween.tween_property(self, "zoom", zoomTo, 0.5)
 
 func distanceFromPlayer() -> float:
 	return player.position.distance_to(position)
