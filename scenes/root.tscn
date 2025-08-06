@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://b8s3k0qwesnhm"]
+[gd_scene load_steps=14 format=4 uid="uid://b8s3k0qwesnhm"]
 
 [ext_resource type="Texture2D" uid="uid://d0uerk5dc0tcn" path="res://assets/WoodPlanks2.png" id="1_lrqlo"]
 [ext_resource type="Texture2D" uid="uid://ytv25mnitcg6" path="res://assets/Bricks.png" id="2_sqa0i"]
 [ext_resource type="PackedScene" uid="uid://bm3sri47uwke0" path="res://scenes/player.tscn" id="3_jh1ax"]
 [ext_resource type="Texture2D" uid="uid://ix0rco2rxkyo" path="res://assets/BrickWall.png" id="3_kycxp"]
 [ext_resource type="Script" uid="uid://yyxhpjftw50b" path="res://scenes/camera_2d.gd" id="3_sqa0i"]
+[ext_resource type="Texture2D" uid="uid://c7dy46s1rovc8" path="res://assets/WoodLogWalls.png" id="4_j287u"]
 [ext_resource type="Texture2D" uid="uid://bc4tiylgfmwha" path="res://assets/WoodPlanks.png" id="4_kycxp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kycxp"]
@@ -47,6 +48,19 @@ texture_region_size = Vector2i(32, 32)
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pvxh"]
+texture = ExtResource("4_j287u")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3hfy5"]
 texture = ExtResource("4_kycxp")
 texture_region_size = Vector2i(32, 32)
@@ -54,11 +68,13 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_5sfjl"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 9
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_kycxp")
 sources/1 = SubResource("TileSetAtlasSource_j287u")
 sources/2 = SubResource("TileSetAtlasSource_5sfjl")
 sources/4 = SubResource("TileSetAtlasSource_3hfy5")
+sources/3 = SubResource("TileSetAtlasSource_7pvxh")
 
 [node name="Main" type="Node2D"]
 
@@ -75,7 +91,7 @@ tile_set = SubResource("TileSet_5sfjl")
 
 [node name="Walls" type="TileMapLayer" parent="."]
 position = Vector2(0, 32)
-tile_map_data = PackedByteArray("AAAWAAEAAgACAAAAAAAWAAIAAgACAAIAAAAAAAEAAgABAAAAAAABAAEAAgABAAAAAAACAAEAAgABAAAAAAADAAEAAgABAAAAAAAEAAEAAgABAAAAAAAFAAEAAgABAAAAAAAGAAEAAgABAAAAAAAHAAEAAgABAAAAAAAIAAEAAgABAAAAAAAJAAEAAgABAAAAAAAKAAEAAgABAAAAAAALAAEAAgABAAAAAAAMAAEAAgABAAAAAAANAAEAAgABAAAAAAAOAAEAAgABAAAAAAAPAAEAAgABAAAAAAAQAAEAAgABAAAAAAARAAEAAgABAAAAAAASAAEAAgABAAAAAAATAAEAAgABAAAAAAAUAAEAAgABAAAAAAAVAAEAAgABAAAAAAAAAAIAAgABAAIAAAABAAIAAgABAAIAAAACAAIAAgABAAIAAAADAAIAAgABAAIAAAAEAAIAAgABAAIAAAAFAAIAAgABAAIAAAAGAAIAAgABAAIAAAAHAAIAAgABAAIAAAAIAAIAAgABAAIAAAAJAAIAAgABAAIAAAAKAAIAAgABAAIAAAALAAIAAgABAAIAAAAMAAIAAgABAAIAAAANAAIAAgABAAIAAAAOAAIAAgABAAIAAAAPAAIAAgABAAIAAAAQAAIAAgABAAIAAAARAAIAAgABAAIAAAASAAIAAgABAAIAAAATAAIAAgABAAIAAAAUAAIAAgABAAIAAAAVAAIAAgABAAIAAAD//wIAAgAAAAIAAAD//wEAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAWAAEAAwACAAEAAAAWAAIAAwACAAIAAAAAAAEAAgABAAAAAAABAAEAAgABAAAAAAACAAEAAgABAAAAAAADAAEAAgABAAAAAAAEAAEAAgABAAAAAAAFAAEAAgABAAAAAAAGAAEAAgABAAAAAAAHAAEAAgABAAAAAAAIAAEAAgABAAAAAAAJAAEAAwAAAAEAAAAKAAEAAwABAAEAAAALAAEAAwABAAEAAAAMAAEAAwABAAEAAAANAAEAAwABAAEAAAAOAAEAAwABAAEAAAAPAAEAAwABAAEAAAAQAAEAAwABAAEAAAARAAEAAwABAAEAAAASAAEAAwABAAEAAAATAAEAAwABAAEAAAAUAAEAAwABAAEAAAAVAAEAAwABAAEAAAAAAAIAAgABAAIAAAABAAIAAgABAAIAAAACAAIAAgABAAIAAAADAAIAAgABAAIAAAAEAAIAAgABAAIAAAAFAAIAAgABAAIAAAAGAAIAAgABAAIAAAAHAAIAAgABAAIAAAAIAAIAAgABAAIAAAAJAAIAAwAAAAIAAAAKAAIAAwABAAIAAAALAAIAAwABAAIAAAAMAAIAAwABAAIAAAANAAIAAwABAAIAAAAOAAIAAwABAAIAAAAPAAIAAwABAAIAAAAQAAIAAwABAAIAAAARAAIAAwABAAIAAAASAAIAAwABAAIAAAATAAIAAwABAAIAAAAUAAIAAwABAAIAAAAVAAIAAwABAAIAAAD//wIAAgAAAAIAAAD//wEAAgAAAAAAAAAJAAAAAwAAAAAAAAAKAAAAAwABAAAAAAALAAAAAwABAAAAAAAMAAAAAwABAAAAAAANAAAAAwABAAAAAAAOAAAAAwABAAAAAAAPAAAAAwABAAAAAAAQAAAAAwABAAAAAAARAAAAAwABAAAAAAASAAAAAwABAAAAAAATAAAAAwABAAAAAAAUAAAAAwABAAAAAAAVAAAAAwABAAAAAAAWAAAAAwACAAAAAAA=")
 tile_set = SubResource("TileSet_5sfjl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -85,6 +101,7 @@ script = ExtResource("3_sqa0i")
 
 [node name="Player" parent="." instance=ExtResource("3_jh1ax")]
 position = Vector2(129, 173)
+collision_mask = 9
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.466181, 0.466181, 0.466181, 1)
