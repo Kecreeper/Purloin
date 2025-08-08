@@ -1,7 +1,7 @@
 extends Camera2D
 
-@onready
-var player: CharacterBody2D = get_node("/root/Main/Player")
+@onready var player: CharacterBody2D = $Player
+@onready var bottomBarUI: Control = get_node("")
 var speed = 80
 var scaleTo = Vector2(1.0, 1.0)
 

@@ -236,7 +236,7 @@ position = Vector2(193, 150)
 zoom = Vector2(0.5, 0.5)
 script = ExtResource("3_sqa0i")
 
-[node name="Control" parent="Camera2D" instance=ExtResource("8_5sfjl")]
+[node name="bottomBarUI" parent="Camera2D" instance=ExtResource("8_5sfjl")]
 offset_left = -193.0
 offset_top = -150.0
 offset_right = -193.0
