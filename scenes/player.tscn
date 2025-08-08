@@ -1,10 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bm3sri47uwke0"]
+[gd_scene load_steps=12 format=3 uid="uid://bm3sri47uwke0"]
 
-[ext_resource type="Script" uid="uid://ckddn0munffuu" path="res://scenes/movement.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://ckddn0munffuu" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://kynejkeqyhjc" path="res://assets/Sprite-0002.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://cvobrmkol1l6" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="3_qhqgy"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -57,13 +55,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(24, 2)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_g2els")
-
-[node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
-shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
@@ -71,6 +73,34 @@ sprite_frames = SubResource("SpriteFrames_fjrip")
 animation = &"up"
 
 [node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D"]
-position = Vector2(0, 1)
+position = Vector2(6, 1)
 scale = Vector2(0.890625, 0.890625)
 texture = ExtResource("3_qhqgy")
+
+[node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 14)
+exclude_parent = false
+target_position = Vector2(0, 2)
+collision_mask = 4
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Noise" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Noise"]
+shape = SubResource("CircleShape2D_dqkch")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_qhqgy")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_qhqgy")

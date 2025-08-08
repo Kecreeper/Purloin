@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="99.963089"
+   height="99.963089"
+   viewBox="0 0 26.448567 26.448567"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient4">
+      <stop
+         style="stop-color:#00b0ff;stop-opacity:0.38209984;"
+         offset="0"
+         id="stop4" />
+      <stop
+         style="stop-color:#7fd7ff;stop-opacity:1;"
+         offset="1"
+         id="stop5" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient2">
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="0.92137927"
+         id="stop3" />
+      <stop
+         style="stop-color:#7fd7ff;stop-opacity:1;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
+    <radialGradient
+       xlink:href="#linearGradient2"
+       id="radialGradient3"
+       cx="50"
+       cy="50"
+       fx="50"
+       fy="50"
+       r="49.990234"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       xlink:href="#linearGradient4"
+       id="linearGradient5"
+       x1="0.009765625"
+       y1="50"
+       x2="99.990234"
+       y2="50"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-0.00976562,-0.00976562)">
+    <path
+       style="fill:url(#radialGradient3);fill-rule:evenodd;stroke:url(#linearGradient5);stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="path1"
+       d="M 50,0.38476563 C 77.406168,0.38476563 99.615234,22.593832 99.615234,50 99.615234,77.406168 77.406168,99.615234 50,99.615234 22.593832,99.615234 0.38476563,77.406168 0.38476563,50 0.38476563,22.593832 22.593832,0.38476563 50,0.38476563 Z"
+       transform="matrix(0.26453734,0,0,0.26453734,0.00718225,0.00718225)" />
+  </g>
+</svg>

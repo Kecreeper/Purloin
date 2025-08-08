@@ -1,16 +1,17 @@
-[gd_scene load_steps=27 format=4 uid="uid://b8s3k0qwesnhm"]
+[gd_scene load_steps=28 format=4 uid="uid://b8s3k0qwesnhm"]
 
-[ext_resource type="Texture2D" uid="uid://d0uerk5dc0tcn" path="res://assets/WoodPlanks2.png" id="1_lrqlo"]
-[ext_resource type="Texture2D" uid="uid://ytv25mnitcg6" path="res://assets/Bricks.png" id="2_sqa0i"]
-[ext_resource type="PackedScene" uid="uid://bm3sri47uwke0" path="res://scenes/player.tscn" id="3_jh1ax"]
-[ext_resource type="Texture2D" uid="uid://ix0rco2rxkyo" path="res://assets/BrickWall.png" id="3_kycxp"]
-[ext_resource type="Script" uid="uid://yyxhpjftw50b" path="res://scenes/camera_2d.gd" id="3_sqa0i"]
-[ext_resource type="Texture2D" uid="uid://c7dy46s1rovc8" path="res://assets/WoodLogWalls.png" id="4_j287u"]
-[ext_resource type="Texture2D" uid="uid://bc4tiylgfmwha" path="res://assets/WoodPlanks.png" id="4_kycxp"]
-[ext_resource type="PackedScene" uid="uid://brgpl4a5bjiq8" path="res://scenes/bottomBarUI.tscn" id="8_5sfjl"]
+[ext_resource type="Texture2D" uid="uid://d0uerk5dc0tcn" path="res://assets/WoodPlanks2.png" id="1_85g3d"]
+[ext_resource type="Texture2D" uid="uid://ytv25mnitcg6" path="res://assets/Bricks.png" id="2_choun"]
+[ext_resource type="Texture2D" uid="uid://ix0rco2rxkyo" path="res://assets/BrickWall.png" id="3_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://c7dy46s1rovc8" path="res://assets/WoodLogWalls.png" id="4_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://bc4tiylgfmwha" path="res://assets/WoodPlanks.png" id="5_trceg"]
+[ext_resource type="Script" uid="uid://yyxhpjftw50b" path="res://scenes/camera_2d.gd" id="6_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://brgpl4a5bjiq8" path="res://scenes/bottomBarUI.tscn" id="7_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://dji4qnpj0uoj0" path="res://scenes/cabinet.tscn" id="8_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://bm3sri47uwke0" path="res://scenes/player.tscn" id="9_muem4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j287u"]
-texture = ExtResource("1_lrqlo")
+texture = ExtResource("1_85g3d")
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 4
 0:0/0 = 0
@@ -23,12 +24,12 @@ texture_region_size = Vector2i(32, 32)
 0:0/3/transpose = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5sfjl"]
-texture = ExtResource("2_sqa0i")
+texture = ExtResource("2_choun")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3hfy5"]
-texture = ExtResource("3_kycxp")
+texture = ExtResource("3_ya4ey")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -50,7 +51,7 @@ texture_region_size = Vector2i(32, 32)
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pvxh"]
-texture = ExtResource("4_j287u")
+texture = ExtResource("4_eb6dy")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -63,7 +64,7 @@ texture_region_size = Vector2i(32, 32)
 2:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y3xxt"]
-texture = ExtResource("4_kycxp")
+texture = ExtResource("5_trceg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -78,7 +79,7 @@ sources/4 = SubResource("TileSetAtlasSource_y3xxt")
 sources/3 = SubResource("TileSetAtlasSource_7pvxh")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5cgh"]
-texture = ExtResource("1_lrqlo")
+texture = ExtResource("1_85g3d")
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 4
 0:0/0 = 0
@@ -91,12 +92,12 @@ texture_region_size = Vector2i(32, 32)
 0:0/3/transpose = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgks2"]
-texture = ExtResource("2_sqa0i")
+texture = ExtResource("2_choun")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dylgi"]
-texture = ExtResource("3_kycxp")
+texture = ExtResource("3_ya4ey")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -118,7 +119,7 @@ texture_region_size = Vector2i(32, 32)
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrhyn"]
-texture = ExtResource("4_j287u")
+texture = ExtResource("4_eb6dy")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -131,7 +132,7 @@ texture_region_size = Vector2i(32, 32)
 2:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_log26"]
-texture = ExtResource("4_kycxp")
+texture = ExtResource("5_trceg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -146,7 +147,7 @@ sources/4 = SubResource("TileSetAtlasSource_log26")
 sources/3 = SubResource("TileSetAtlasSource_jrhyn")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ya6yc"]
-texture = ExtResource("1_lrqlo")
+texture = ExtResource("1_85g3d")
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 4
 0:0/0 = 0
@@ -159,12 +160,12 @@ texture_region_size = Vector2i(32, 32)
 0:0/3/transpose = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mflgo"]
-texture = ExtResource("2_sqa0i")
+texture = ExtResource("2_choun")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_34frw"]
-texture = ExtResource("3_kycxp")
+texture = ExtResource("3_ya4ey")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -186,7 +187,7 @@ texture_region_size = Vector2i(32, 32)
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ui5n"]
-texture = ExtResource("4_j287u")
+texture = ExtResource("4_eb6dy")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -199,7 +200,7 @@ texture_region_size = Vector2i(32, 32)
 2:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3p2p"]
-texture = ExtResource("4_kycxp")
+texture = ExtResource("5_trceg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -231,20 +232,22 @@ position = Vector2(0, 32)
 tile_map_data = PackedByteArray("AAAWAAEAAwACAAEAAAAWAAIAAwACAAIAAAAAAAEAAgABAAAAAAABAAEAAgABAAAAAAACAAEAAgABAAAAAAADAAEAAgABAAAAAAAEAAEAAgABAAAAAAAFAAEAAgABAAAAAAAGAAEAAgABAAAAAAAHAAEAAgABAAAAAAAIAAEAAgABAAAAAAAJAAEAAwAAAAEAAAAKAAEAAwABAAEAAAALAAEAAwABAAEAAAAMAAEAAwABAAEAAAANAAEAAwABAAEAAAAOAAEAAwABAAEAAAAPAAEAAwABAAEAAAAQAAEAAwABAAEAAAARAAEAAwABAAEAAAASAAEAAwABAAEAAAATAAEAAwABAAEAAAAUAAEAAwABAAEAAAAVAAEAAwABAAEAAAAAAAIAAgABAAIAAAABAAIAAgABAAIAAAACAAIAAgABAAIAAAADAAIAAgABAAIAAAAEAAIAAgABAAIAAAAFAAIAAgABAAIAAAAGAAIAAgABAAIAAAAHAAIAAgABAAIAAAAIAAIAAgABAAIAAAAJAAIAAwAAAAIAAAAKAAIAAwABAAIAAAALAAIAAwABAAIAAAAMAAIAAwABAAIAAAANAAIAAwABAAIAAAAOAAIAAwABAAIAAAAPAAIAAwABAAIAAAAQAAIAAwABAAIAAAARAAIAAwABAAIAAAASAAIAAwABAAIAAAATAAIAAwABAAIAAAAUAAIAAwABAAIAAAAVAAIAAwABAAIAAAD//wIAAgAAAAIAAAD//wEAAgAAAAAAAAAJAAAAAwAAAAAAAAAKAAAAAwABAAAAAAALAAAAAwABAAAAAAAMAAAAAwABAAAAAAANAAAAAwABAAAAAAAOAAAAAwABAAAAAAAPAAAAAwABAAAAAAAQAAAAAwABAAAAAAARAAAAAwABAAAAAAASAAAAAwABAAAAAAATAAAAAwABAAAAAAAUAAAAAwABAAAAAAAVAAAAAwABAAAAAAAWAAAAAwACAAAAAAA=")
 tile_set = SubResource("TileSet_ccljq")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(193, 150)
-zoom = Vector2(0.5, 0.5)
-script = ExtResource("3_sqa0i")
+[node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
+position = Vector2(146, 553)
+script = ExtResource("6_a8y0u")
 
-[node name="bottomBarUI" parent="Camera2D" instance=ExtResource("8_5sfjl")]
+[node name="bottomBarUI" parent="Camera2D" instance=ExtResource("7_jkv2x")]
 offset_left = -193.0
 offset_top = -150.0
 offset_right = -193.0
 offset_bottom = -150.0
 
-[node name="Player" parent="." instance=ExtResource("3_jh1ax")]
-position = Vector2(129, 173)
-collision_mask = 9
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.466181, 0.466181, 0.466181, 1)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("8_jbj1t")]
+position = Vector2(112, 124)
+
+[node name="Player" parent="." instance=ExtResource("9_muem4")]
+position = Vector2(58, 181)
+collision_mask = 9
