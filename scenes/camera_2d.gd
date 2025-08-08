@@ -2,7 +2,7 @@ extends Camera2D
 
 @onready var player: CharacterBody2D = get_node("/root/Main/Player")
 var speed = 80
-var zoomTo = Vector2(4, 4)
+var zoomTo = Vector2(3, 3)
 
 func _ready() -> void:
 	position = player.position
