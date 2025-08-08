@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bm3sri47uwke0"]
+[gd_scene load_steps=24 format=3 uid="uid://bm3sri47uwke0"]
 
 [ext_resource type="Script" uid="uid://ckddn0munffuu" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://kynejkeqyhjc" path="res://assets/Sprite-0002.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://cvobrmkol1l6" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://pjcnlk72jndd" path="res://assets/noiseRadius.png" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -55,13 +56,90 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
-radius = 50.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
 size = Vector2(24, 2)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(800, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(900, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qfm1y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ej7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oprun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8ls1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -86,13 +164,6 @@ hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="Noise" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Noise"]
-shape = SubResource("CircleShape2D_dqkch")
-
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 64
 collision_mask = 128
@@ -104,3 +175,19 @@ shape = SubResource("CircleShape2D_qhqgy")
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="Noise" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Noise"]
+shape = SubResource("CircleShape2D_dqkch")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Noise"]
+
+[node name="noiseRadius" type="AnimatedSprite2D" parent="Noise/CanvasLayer"]
+sprite_frames = SubResource("SpriteFrames_qfm1y")
+frame_progress = 0.130718
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Noise/CanvasLayer"]
+color = Color(0, 0.504047, 0.601919, 1)

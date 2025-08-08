@@ -3,11 +3,14 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
 @onready var raycast: RayCast2D = get_node("AnimatedSprite2D/RayCast2D")
 
-var speed = 75
+var speed = 125.0
 
 func playerInput():
+	var modifier = 1.0
 	var direction = Input.get_vector("left", "right", "up", "down")
-	velocity = direction * speed
+	if Input.is_action_pressed("run"):
+		modifier = 1.25
+	velocity = direction * speed * modifier
 	if direction.x > 0:
 		sprite.play("right")
 	elif direction.x < 0:
@@ -19,12 +22,6 @@ func playerInput():
 		
 func checkForInteractions():
 	print(raycast.get_collider())
-	
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("run"):
-		speed = 100
-	else:
-		speed = 75
 
 func _physics_process(_delta):
 	playerInput()
