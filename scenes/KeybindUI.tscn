@@ -10,16 +10,16 @@ font_size = 20
 font_size = 20
 shadow_size = 0
 
-[node name="HBoxContainer" type="HBoxContainer"]
+[node name="KeybindUI" type="HBoxContainer"]
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="ButtonContainer" type="CenterContainer" parent="."]
 layout_mode = 2
 
-[node name="ButtonBox" type="TextureRect" parent="CenterContainer"]
+[node name="ButtonBox" type="TextureRect" parent="ButtonContainer"]
 layout_mode = 2
 texture = ExtResource("1_4ccqr")
 
-[node name="Input" type="Label" parent="CenterContainer"]
+[node name="Input" type="Label" parent="ButtonContainer"]
 layout_mode = 2
 text = "K"
 label_settings = SubResource("LabelSettings_108wq")

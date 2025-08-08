@@ -355,12 +355,6 @@ tile_set = SubResource("TileSet_jkv2x")
 position = Vector2(146, 553)
 script = ExtResource("6_a8y0u")
 
-[node name="bottomBarUI" parent="Camera2D" instance=ExtResource("7_jkv2x")]
-offset_left = -193.0
-offset_top = -150.0
-offset_right = -193.0
-offset_bottom = -150.0
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.466181, 0.466181, 0.466181, 1)
 
@@ -373,3 +367,7 @@ collision_mask = 9
 
 [node name="Drawer1" parent="." instance=ExtResource("12_trceg")]
 position = Vector2(176, 141)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="bottomBarUI" parent="CanvasLayer" instance=ExtResource("7_jkv2x")]

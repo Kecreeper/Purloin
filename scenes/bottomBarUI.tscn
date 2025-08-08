@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brgpl4a5bjiq8"]
 
-[node name="Control" type="Control"]
+[node name="bottomBarUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

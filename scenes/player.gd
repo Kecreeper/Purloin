@@ -2,11 +2,16 @@ extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
 @onready var raycast: RayCast2D = get_node("AnimatedSprite2D/RayCast2D")
+
+@onready var bar: HBoxContainer = get_node("/root/Main/CanvasLayer/bottomBarUI/MarginContainer/HBoxContainer")
+var keybindScene = preload("res://scenes/KeybindUI.tscn")
+
 @onready var ringRadiusCollision: CollisionShape2D = get_node("Noise/CollisionShape2D")
 @onready var ringRadiusImage: AnimatedSprite2D = get_node("Noise/noiseRadius")
 
 var speed = 100.0
 var ringSpeed = 5
+var barKeys = []
 
 func updateNoise(delta: float) -> void:
 	var currentVelocity = velocity.length()
@@ -34,12 +39,27 @@ func processInput() -> void:
 	elif direction.y > 0:
 		sprite.play("down")
 
+var showing_Interaction = false
+
 func checkForInteractions():
-	print(raycast.get_collider())
+	var collision = raycast.get_collider()
+	if collision == null:
+		for child in bar.get_children():
+			child.queue_free()
+		barKeys.clear()
+		showing_Interaction = false
+		return
+	elif collision.name == "Interaction" and showing_Interaction == false:
+		showing_Interaction = true
+		var newKeybind: HBoxContainer = keybindScene.instantiate()
+		newKeybind.get_node("ButtonContainer/Input").text = "E"
+		newKeybind.get_node("Action").text = "Interact"
+		bar.add_child(newKeybind)
+		barKeys.append(newKeybind)
+	print(barKeys)
 
 func _physics_process(delta):
 	processInput()
 	move_and_slide()
 	checkForInteractions()
 	updateNoise(delta)
-	print("velocity: %s" % velocity.length())
