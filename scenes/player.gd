@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
-@onready var raycast: RayCast2D = get_node("AnimatedSprite2D/RayCast2D")
+@onready var raycast: RayCast2D = get_node("AnimatedSprite2D/PlayerRayCast2D")
 
-@onready var bar: HBoxContainer = get_node("/root/Main/CanvasLayer/bottomBarUI/MarginContainer/HBoxContainer")
+@onready var uiBar: HBoxContainer = get_node("/root/Main/CanvasLayer/bottomBarUI/MarginContainer/HBoxContainer")
 var keybindScene = preload("res://scenes/KeybindUI.tscn")
 
 @onready var ringRadiusCollision: CollisionShape2D = get_node("Noise/CollisionShape2D")
@@ -11,7 +11,6 @@ var keybindScene = preload("res://scenes/KeybindUI.tscn")
 
 var speed = 100.0
 var ringSpeed = 5
-var barKeys = []
 
 func updateNoise(delta: float) -> void:
 	var currentVelocity = velocity.length()
@@ -40,23 +39,40 @@ func processInput() -> void:
 		sprite.play("down")
 
 var showing_Interaction = false
+var interactions = [
+	"Hide",
+	"Loot"
+]
+var interactionBinds = {
+	"Hide" = "E",
+	"Loot" = "E"
+}
+var currentInteractions = {}
+
+func showInteraction(collision):
+	if showing_Interaction != false:
+		return
+	if collision.name not in interactions:
+		return
+	var newKey: HBoxContainer = keybindScene.instantiate()
+	var newKeyBind    = newKey.get_node("ButtonContainer/Input")
+	var newKeyAction  = newKey.get_node("Action")
+	newKeyBind.text   = interactionBinds[collision.name]
+	newKeyAction.text = collision.name
+	uiBar.add_child(newKey)
+	currentInteractions.append(newKey)
+	showing_Interaction = true
 
 func checkForInteractions():
 	var collision = raycast.get_collider()
 	if collision == null:
-		for child in bar.get_children():
-			child.queue_free()
-		barKeys.clear()
-		showing_Interaction = false
+		if showing_Interaction == true:
+			for child in uiBar.get_children():
+				child.queue_free()
+			#currentInteractions.clear()
+			showing_Interaction = false
 		return
-	elif collision.name == "Interaction" and showing_Interaction == false:
-		showing_Interaction = true
-		var newKeybind: HBoxContainer = keybindScene.instantiate()
-		newKeybind.get_node("ButtonContainer/Input").text = "E"
-		newKeybind.get_node("Action").text = "Interact"
-		bar.add_child(newKeybind)
-		barKeys.append(newKeybind)
-	print(barKeys)
+	showInteraction(collision)
 
 func _physics_process(delta):
 	processInput()

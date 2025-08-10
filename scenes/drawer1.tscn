@@ -2,6 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://ns107llqfikt" path="res://assets/Drawer1-Sheet.png" id="1_aof5p"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tcbo"]
+size = Vector2(32, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2rrb"]
+size = Vector2(32, 31)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_7tcbo"]
 atlas = ExtResource("1_aof5p")
 region = Rect2(0, 0, 32, 48)
@@ -94,22 +100,8 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2rrb"]
-size = Vector2(32, 31)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tcbo"]
-size = Vector2(32, 17)
-
 [node name="Drawer1" type="StaticBody2D"]
 collision_mask = 2
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_3m07c")
-animation = &"open"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8.5)
-shape = SubResource("RectangleShape2D_w2rrb")
 
 [node name="Interaction" type="Area2D" parent="."]
 position = Vector2(0, -8.5)
@@ -119,3 +111,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
 position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_7tcbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_w2rrb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3m07c")
+animation = &"open"

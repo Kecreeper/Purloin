@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://b8s3k0qwesnhm"]
+[gd_scene load_steps=33 format=4 uid="uid://b8s3k0qwesnhm"]
 
 [ext_resource type="Texture2D" uid="uid://d0uerk5dc0tcn" path="res://assets/WoodPlanks2.png" id="1_85g3d"]
 [ext_resource type="Texture2D" uid="uid://ytv25mnitcg6" path="res://assets/Bricks.png" id="2_choun"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://brgpl4a5bjiq8" path="res://scenes/bottomBarUI.tscn" id="7_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dji4qnpj0uoj0" path="res://scenes/cabinet.tscn" id="8_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://bm3sri47uwke0" path="res://scenes/player.tscn" id="9_muem4"]
-[ext_resource type="PackedScene" uid="uid://mvglcocxfqnf" path="res://scenes/drawer1.tscn" id="12_trceg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5cgh"]
 texture = ExtResource("1_85g3d")
@@ -121,6 +120,7 @@ texture_region_size = Vector2i(32, 32)
 texture = ExtResource("2_choun")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_34frw"]
 texture = ExtResource("3_ya4ey")
@@ -148,14 +148,23 @@ texture_region_size = Vector2i(32, 32)
 texture = ExtResource("4_eb6dy")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3p2p"]
 texture = ExtResource("5_trceg")
@@ -274,8 +283,6 @@ texture_region_size = Vector2i(32, 32)
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:1/0 = 0
 4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-5:1/0 = 0
-6:1/0 = 0
 7:1/0 = 0
 8:1/0 = 0
 9:1/0 = 0
@@ -291,9 +298,6 @@ texture_region_size = Vector2i(32, 32)
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:2/0 = 0
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
 7:2/0 = 0
 8:2/0 = 0
 9:2/0 = 0
@@ -364,9 +368,6 @@ position = Vector2(112, 124)
 [node name="Player" parent="." instance=ExtResource("9_muem4")]
 position = Vector2(58, 181)
 collision_mask = 9
-
-[node name="Drawer1" parent="." instance=ExtResource("12_trceg")]
-position = Vector2(176, 141)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
