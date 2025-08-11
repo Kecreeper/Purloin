@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://dji4qnpj0uoj0"]
+[gd_scene load_steps=20 format=3 uid="uid://dji4qnpj0uoj0"]
 
+[ext_resource type="Script" uid="uid://dcwtqfjwocfsn" path="res://scenes/cabinet.gd" id="1_54rbh"]
 [ext_resource type="Texture2D" uid="uid://demiikn7jem1k" path="res://assets/Cabinet.png" id="1_ei0b6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb64c"]
-size = Vector2(32, 8)
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pkbbd"]
 size = Vector2(32, 56)
@@ -121,16 +122,17 @@ animations = [{
 
 [node name="Cabinet" type="StaticBody2D"]
 collision_mask = 2
+script = ExtResource("1_54rbh")
 
 [node name="Hide" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hide"]
-position = Vector2(0, 28)
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_nb64c")
 
-[node name="Cabinet" type="Sprite2D" parent="."]
+[node name="CabinetSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_ei0b6")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 64)
@@ -142,5 +144,5 @@ shape = SubResource("RectangleShape2D_pkbbd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ei0b6")
 animation = &"close"
-frame = 6
-frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

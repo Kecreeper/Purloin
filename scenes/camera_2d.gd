@@ -14,4 +14,6 @@ func distanceFromPlayer() -> float:
 	return player.position.distance_to(position)
 
 func _process(delta) -> void:
+	if GLOBAL.pauseCamera == true:
+		return
 	position += (player.position - position).normalized()*speed*delta*(distanceFromPlayer()/25)

@@ -47,7 +47,7 @@ var interactionBinds = {
 	"Hide" = "E",
 	"Loot" = "E"
 }
-var currentInteractions = {}
+#var currentInteractions = {}
 
 func showInteraction(collision):
 	if showing_Interaction != false:
@@ -60,7 +60,8 @@ func showInteraction(collision):
 	newKeyBind.text   = interactionBinds[collision.name]
 	newKeyAction.text = collision.name
 	uiBar.add_child(newKey)
-	currentInteractions.append(newKey)
+	GLOBAL.availableInteractions.append(collision.get_parent())
+	#currentInteractions.append(collision.name)
 	showing_Interaction = true
 
 func checkForInteractions():
@@ -69,13 +70,14 @@ func checkForInteractions():
 		if showing_Interaction == true:
 			for child in uiBar.get_children():
 				child.queue_free()
-			#currentInteractions.clear()
+			GLOBAL.availableInteractions.clear()
 			showing_Interaction = false
 		return
 	showInteraction(collision)
 
 func _physics_process(delta):
 	processInput()
-	move_and_slide()
+	if GLOBAL.pausePhysics == false:
+		move_and_slide()
 	checkForInteractions()
 	updateNoise(delta)
