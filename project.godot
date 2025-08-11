@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 GLOBAL="*res://scripts/GLOBAL.gd"
 Camera2d="*res://scenes/camera_2d.gd"
-WaitFunction="*res://scripts/wait_function.gd"
+wait="*res://scripts/wait.gd"
 
 [editor_plugins]
 

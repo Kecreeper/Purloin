@@ -11,21 +11,23 @@ var speech = "I can climb through this wall..."
 var inspectAvailable = true
 var climbAvailable = false
 
-
+func makeWallClear():
+	wall.modulate = "ffffff68"
 
 func climbThrough():
 	GLOBAL.player.position = wall.global_position - Vector2(0, 10)
+	makeWallClear()
 
 func clearSpeech():
 	get_tree().get_nodes_in_group("SpeechText")[0].text = ""
 
 func playSpeech():
 	inspectAvailable = false
+	inspectCollision.disabled = true
 	get_tree().get_nodes_in_group("SpeechText")[0].text = speech #:sob:
-	var tween = create_tween()
-	tween.tween_property($tween, "position", Vector2(0,1.0), 1.0)
-	tween.tween_interval(3.0)
-	tween.tween_callback(clearSpeech)
+	wait.wait(3.0, clearSpeech)
+	climbCollision.disabled = false
+	climbAvailable = true
 func _input(event):
 	if !event.is_action_pressed("interact"):
 		return
@@ -33,3 +35,5 @@ func _input(event):
 		return
 	if inspectAvailable == true:
 		playSpeech()
+	elif climbAvailable == true:
+		climbThrough()

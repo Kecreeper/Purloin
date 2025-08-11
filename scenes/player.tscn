@@ -1,11 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://bm3sri47uwke0"]
+[gd_scene load_steps=26 format=3 uid="uid://bm3sri47uwke0"]
 
 [ext_resource type="Script" uid="uid://ckddn0munffuu" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://kynejkeqyhjc" path="res://assets/Sprite-0002.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://cvobrmkol1l6" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://pjcnlk72jndd" path="res://assets/noiseRadius.png" id="4_dqkch"]
 [ext_resource type="Script" uid="uid://bulgceerdvjyf" path="res://scenes/noise_radius.gd" id="5_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://cffywxssg5w7o" path="res://icon.svg" id="6_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -145,7 +144,7 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qlg0r"]
-font_size = 10
+font_size = 8
 outline_size = 1
 shadow_size = 0
 shadow_color = Color(0, 0, 0, 1)
@@ -214,7 +213,3 @@ layout_mode = 2
 label_settings = SubResource("LabelSettings_qlg0r")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="tween" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("6_tuyoq")

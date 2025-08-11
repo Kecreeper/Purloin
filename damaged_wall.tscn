@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cecag2gkshsbd" path="res://assets/DamagedWoodLogWall.png" id="1_58hf5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58hf5"]
-size = Vector2(64, 10)
+size = Vector2(64, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dlsp"]
-size = Vector2(64, 16)
+size = Vector2(64, 22)
 
 [node name="DamagedWall" type="StaticBody2D"]
 script = ExtResource("1_2dlsp")
@@ -17,7 +17,7 @@ texture = ExtResource("1_58hf5")
 region_rect = Rect2(0, 64, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 26)
+position = Vector2(0, 26.5)
 shape = SubResource("RectangleShape2D_58hf5")
 
 [node name="Inspect" type="Area2D" parent="."]
@@ -25,7 +25,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inspect"]
-position = Vector2(0, 39)
+position = Vector2(0, 43)
 shape = SubResource("RectangleShape2D_2dlsp")
 
 [node name="Climb Through" type="Area2D" parent="."]
@@ -33,6 +33,5 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Climb Through"]
-position = Vector2(0, 39)
+position = Vector2(0, 43)
 shape = SubResource("RectangleShape2D_2dlsp")
-disabled = true
