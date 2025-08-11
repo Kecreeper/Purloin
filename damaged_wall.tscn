@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://byb4fvpafj88f"]
+
+[ext_resource type="Script" uid="uid://bqt30slwlmvh1" path="res://damaged_wall.gd" id="1_2dlsp"]
+[ext_resource type="Texture2D" uid="uid://cecag2gkshsbd" path="res://assets/DamagedWoodLogWall.png" id="1_58hf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58hf5"]
+size = Vector2(64, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dlsp"]
+size = Vector2(64, 16)
+
+[node name="DamagedWall" type="StaticBody2D"]
+script = ExtResource("1_2dlsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_58hf5")
+region_rect = Rect2(0, 64, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 26)
+shape = SubResource("RectangleShape2D_58hf5")
+
+[node name="Inspect" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inspect"]
+position = Vector2(0, 39)
+shape = SubResource("RectangleShape2D_2dlsp")
+
+[node name="Climb Through" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Climb Through"]
+position = Vector2(0, 39)
+shape = SubResource("RectangleShape2D_2dlsp")
+disabled = true

@@ -1,14 +1,13 @@
-[gd_scene load_steps=33 format=4 uid="uid://b8s3k0qwesnhm"]
+[gd_scene load_steps=32 format=4 uid="uid://b8s3k0qwesnhm"]
 
 [ext_resource type="Texture2D" uid="uid://d0uerk5dc0tcn" path="res://assets/WoodPlanks2.png" id="1_85g3d"]
 [ext_resource type="Texture2D" uid="uid://ytv25mnitcg6" path="res://assets/Bricks.png" id="2_choun"]
 [ext_resource type="Texture2D" uid="uid://ix0rco2rxkyo" path="res://assets/BrickWall.png" id="3_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://c7dy46s1rovc8" path="res://assets/WoodLogWalls.png" id="4_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://bc4tiylgfmwha" path="res://assets/WoodPlanks.png" id="5_trceg"]
-[ext_resource type="Script" uid="uid://yyxhpjftw50b" path="res://scenes/camera_2d.gd" id="6_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://cy6wr7vigft1t" path="res://assets/GrassAndDirtPaths.png" id="6_choun"]
 [ext_resource type="Texture2D" uid="uid://bp2s4xy04ox34" path="res://assets/WoodTable.png" id="7_eb6dy"]
-[ext_resource type="PackedScene" uid="uid://brgpl4a5bjiq8" path="res://scenes/bottomBarUI.tscn" id="7_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://cpl233k2152f0" path="res://scenes/bottomBarUI.tscn" id="7_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dji4qnpj0uoj0" path="res://scenes/cabinet.tscn" id="8_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://bm3sri47uwke0" path="res://scenes/player.tscn" id="9_muem4"]
 
@@ -349,10 +348,6 @@ tile_set = SubResource("TileSet_ccljq")
 [node name="Objects" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAADAAcAAgAEAAEAAAAFAAcAAgAEAAAAAAAGAAcAAgAFAAAAAAAHAAcAAgAFAAAAAAAIAAcAAgAFAAAAAAAJAAcAAgAGAAAAAAAHAAUAAgADAAIAAAAHAAQAAgADAAAAAAD//wcAAgAAAAIAAAAAAAcAAgACAAIAAAAAAAYAAgACAAAAAAD//wYAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_jkv2x")
-
-[node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
-position = Vector2(146, 553)
-script = ExtResource("6_a8y0u")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.466181, 0.466181, 0.466181, 1)

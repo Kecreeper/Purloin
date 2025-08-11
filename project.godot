@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="Purloin"
-run/main_scene="uid://b8s3k0qwesnhm"
+run/main_scene="uid://b2mjt247u45r"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GLOBAL="*res://scripts/GLOBAL.gd"
+Camera2d="*res://scenes/camera_2d.gd"
+WaitFunction="*res://scripts/wait_function.gd"
 
 [editor_plugins]
 
@@ -27,6 +29,11 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 Camera=""
 Persist=""
+SpeechText=""
+
+[gui]
+
+common/snap_controls_to_pixels=false
 
 [input]
 

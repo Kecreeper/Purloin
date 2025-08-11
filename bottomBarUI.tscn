@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://0aqp604prtrx"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="bottomBarUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 265.0
+offset_right = -4.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="bottomBarUI"]
+layout_mode = 2
+offset_top = 578.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="bottomBarUI/MarginContainer"]
+layout_mode = 2
+alignment = 2

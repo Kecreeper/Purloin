@@ -9,6 +9,8 @@ var keybindScene = preload("res://scenes/KeybindUI.tscn")
 @onready var ringRadiusCollision: CollisionShape2D = get_node("Noise/CollisionShape2D")
 @onready var ringRadiusImage: AnimatedSprite2D = get_node("Noise/noiseRadius")
 
+@onready var speechText: Label = get_node("CenterContainer/SpeechText")
+
 var speed = 100.0
 var ringSpeed = 5
 
@@ -41,27 +43,30 @@ func processInput() -> void:
 var showing_Interaction = false
 var interactions = [
 	"Hide",
-	"Loot"
+	"Loot",
+	"Inspect",
+	"Climb Through",
 ]
 var interactionBinds = {
 	"Hide" = "E",
-	"Loot" = "E"
+	"Loot" = "E",
+	"Inspect" = "E",
+	"Climb Through" = "E",
 }
-#var currentInteractions = {}
 
 func showInteraction(collision):
+	var collisionName = collision.name
 	if showing_Interaction != false:
 		return
-	if collision.name not in interactions:
+	if collisionName not in interactions:
 		return
 	var newKey: HBoxContainer = keybindScene.instantiate()
 	var newKeyBind    = newKey.get_node("ButtonContainer/Input")
 	var newKeyAction  = newKey.get_node("Action")
-	newKeyBind.text   = interactionBinds[collision.name]
-	newKeyAction.text = collision.name
+	newKeyBind.text   = interactionBinds[collisionName]
+	newKeyAction.text = collisionName
 	uiBar.add_child(newKey)
 	GLOBAL.availableInteractions.append(collision.get_parent())
-	#currentInteractions.append(collision.name)
 	showing_Interaction = true
 
 func checkForInteractions():
